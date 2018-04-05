@@ -1,0 +1,430 @@
+// bower:scss
+// endbower
+
+@import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700,700i,900,900i
+|Didact+Gothic|Prompt:100,200,300,400,500,600,700,800,900';
+
+//Variables
+$white:#FFF;
+$black:#000;
+$none:transparent;
+
+$powder:#F2F2F2;
+$fog:#D9D9D9;
+$steel:#AAA;
+$charcoal:#262626;
+$storm:#222B32;
+
+$darkCherry:#580129;
+
+$navy:#0F3244;
+$pumpkin:#BF571B;
+$rose:#8C1C25;
+
+
+@mixin defaultAlignment {
+  margin:0 auto;
+  width:auto;
+  max-width:100%;
+}
+
+@mixin defaultHeader{
+  font-family:'Prompt', 'Lato', Helvetica, Arial, sans-serif;
+  letter-spacing:-3px;
+  font-weight:800;
+  color:lighten($pumpkin, 5%);
+}
+
+@mixin defaultSubtext {
+  font-family:'Lato', Helvetica, Arial, sans-serif;
+  letter-spacing:-0.8px;
+  line-height:0;
+  font-weight:300;
+  color:$powder;
+
+}
+
+@mixin defaultText {
+  font-family:'Didact Gothic', 'Lato', Helvetica, Arial, sans-serif;
+  font-weight:400;
+  color:$powder;
+  letter-spacing:1px;
+}
+
+@mixin outputText {
+  font-family:'Lato', Helvetica, Arial, sans-serif;
+  font-weight:300;
+  color:$powder;
+  letter-spacing:3px;
+  display:inline-flex;
+  font-size:16px;
+  text-transform:lowercase; 
+}
+
+@mixin defaultButton{
+  outline:none;
+  border:none;
+  color:$powder;
+  background:lighten($pumpkin, 5%);
+  padding:6px 10px;
+  text-transform:uppercase;
+  border-radius:3px;
+  &:hover{
+    cursor:pointer;
+  }
+}
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body {
+  font-family:'Lato', Helvetica, Arial, sans-serif;
+  cursor:default;
+  background:darken($navy, 3%);
+  line-height:1.6;
+}
+
+
+// === Typography === //
+h1, h2, h3, h4, h5, h6 {
+    font-weight:normal;
+    margin:0;
+}
+
+h1 {font-size: 72px;}
+h2 {font-size: 48px;}
+h3 {font-size: 36px;}
+h4 {font-size: 22px;}
+h5 {font-size: 18px;}
+h6 {font-size: 12px;}
+
+
+// === Utility === //
+.textCenter {text-align:center;}
+.padded{padding:16px;}
+.buffer{padding:32px;}
+.uppercase{text-transform:uppercase;}
+.link {text-decoration:none; font-weight:bolder;} 
+.container{max-width:1024px; margin:0 auto;}
+.clear{clear:both; float:none; margin:0 !important;}
+
+button:focus{outline:0;}
+a, ul, li {
+  text-decoration:none; 
+  list-style-type:none; 
+  color:$white;
+}
+button, input{
+  outline:none; 
+  -webkit-appearance:none;
+}
+
+hr{
+  width:100%;
+  border:solid lighten($pumpkin, 5%);
+  border-width:1px 0 0;
+  margin:0 auto;
+  padding:5px 0;
+}
+
+
+// === Header === //
+header{
+  h4{
+    @include defaultSubtext;
+    margin:0 0 -36px 36px;
+    font-size:20px;
+  }
+  h1{@include defaultHeader;}
+}
+
+// === Main Content === //
+.main{
+  .main-content{
+    @include defaultText;
+    .loop li{
+      margin:0 auto;
+      h5{margin:5px 0 10px;}
+      .loopOutput{
+        @include outputText;
+        max-width:450px;
+      }
+    }
+  }
+
+  input[type="submit"]{
+    @include defaultButton;
+    margin-bottom:35px;
+  }
+}
+
+   
+// === Footer === //
+
+footer{
+  p{
+    color:$powder;
+    font-weight:300;
+    font-size:12px;
+    letter-spacing:4.5px;
+  }
+}
+
+// === MEDIA QUERIES === //
+
+  @media screen 
+  and (min-width:400px)
+  and (max-width:435px) {
+    //Code Here
+  }
+
+  @media screen
+  and (min-width:400px)
+  and (max-width:567px) {
+    //Code Here
+    .container{margin:0 4%;}
+    .row.padded{padding:0px;}
+    hr{width:100% !important;}
+
+    .loop li {
+      span.loopOutput{margin:0 16px;}
+    }
+    footer {
+      margin:0 auto !important;
+      p{
+        letter-spacing:0px;
+        font-size:11px;
+      }
+    }
+  }
+
+  /* iPhone 5 & 5s */
+  /* Portrait Only Styles */
+  @media only screen 
+  and (min-device-width:320px) 
+  and (max-device-width:568px)
+  and (-webkit-min-device-pixel-ratio:2)
+  and (orientation:portrait) {
+    //Code Here
+  }
+
+  /* iPhone 6, iPhone 6s, iPhone 7 */ 
+  /* Landscape & Portrait */
+  @media only screen 
+  and (min-width:375px) 
+  and (max-width:667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    //Code Here
+    .row.padded{padding:0px;}
+
+    span.loopOutput{font-size:18px !important;}
+
+    header{
+      h4{
+        font-size:18px;
+        margin:0 0 -37px 33px;
+        letter-spacing:0.5px;
+      }
+    }
+    .main .main-content{
+      text-align:left !important;
+      .loop li{ 
+        hr{width:100% !important;}
+        h5{
+          font-size:20px;
+          margin:15px 0 10px;
+        }
+
+        input[type="submit"]{
+          font-size:14px;
+          padding:8px 12px !important;
+        }
+      }
+    }
+    footer p{
+      font-size:11px;
+      font-weight:400;
+    }
+  }
+
+  /* iPhone 6, iPhone 6s, iPhone 7 */ 
+  /* Landscape Only Styles */
+  @media only screen 
+  and (min-width:375px) 
+  and (max-width:667px) 
+  and (-webkit-min-device-pixel-ratio:2) 
+  and (orientation:landscape) {
+    //Code Here
+    .container{margin:0 4%;}
+    span.loopOutput{
+      max-width:98% !important;
+    }
+
+    footer p{letter-spacing:3.0px;}
+  }
+
+  /* iPhone 6, iPhone 6s, iPhone 7 */ 
+  /* Portrait Only Styles */
+  @media only screen 
+  and (min-width:375px) 
+  and (max-width:667px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation:portrait) {
+    //Code Here
+    .container{margin:0 4%;}
+
+    footer p{letter-spacing:0;}
+
+  }
+
+  /* iPhone 6+, iPhone 6s+, iPhone 7+ */ 
+  /* Portrait & Landscape Styles */
+  @media only screen 
+  and (min-width:414px) 
+  and (max-width:736px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    //Code Here
+    .container{margin:0 4%;}
+  }
+
+  /* iPhone 6+, iPhone 6s+, iPhone 7+ */ 
+  /* Landscape Only Styles */
+  @media only screen 
+  and (min-width:414px) 
+  and (max-width:736px) 
+  and (-webkit-min-device-pixel-ratio:2) 
+  and (orientation:landscape) {
+    //Code Here
+
+  }
+
+  /* iPhone 6+, iPhone 6s+, iPhone 7+ */ 
+  /* Portrait Only Styles */
+  @media only screen 
+  and (min-width:414px) 
+  and (max-width:736px) 
+  and (-webkit-min-device-pixel-ratio:2)
+  and (orientation:portrait) {
+  //Code Here
+
+  }
+
+   /* iPad & iPad Mini */
+  /* Portrait & Landscape Styles */
+  @media only screen 
+  and (min-device-width:768px) 
+  and (max-device-width:1024px) 
+  and (-webkit-min-device-pixel-ratio:1) {
+    //Code Here
+    .main.main-content{text-align:left;}
+    header{
+      h4{
+        font-size:21px;
+        margin:0 0 -44px 42px;
+        letter-spacing:0.5px;
+      }
+      h1{font-size:84px;}
+    }
+
+    input[type="submit"]{
+      font-size:14px;
+      padding:8px 12px !important;
+    }
+
+    footer p{
+      font-weight:400;
+      letter-spacing:3px;
+    }
+  }
+
+  /* iPad Mini Landscape */
+  /* Landscape Only Styles */
+  @media only screen 
+  and (min-device-width:768px) 
+  and (max-device-width:1024px) 
+  and (-webkit-min-device-pixel-ratio:1)
+  and (orientation:landscape)  {
+    //Code Here
+    .container{margin:0 3%;}
+
+    h5{
+      font-size:20px;
+      span.loopOutput{
+        font-size:18px !important;
+      }
+    }
+  }
+
+  /* iPad Mini Portrait */
+  /* Portrait Only Styles */
+  @media only screen 
+  and (min-device-width:768px) 
+  and (max-device-width:1024px) 
+  and (-webkit-min-device-pixel-ratio:1)
+  and (orientation:portrait)  {
+    //Code Here
+    .container{margin:0 4%;}
+    .row.padded{padding:0px;}
+    .main{padding:30px 0;}
+
+    h5{
+      font-size:24px;
+      span.loopOutput{
+        font-size:20px !important;
+        max-width:100% !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 959px) {
+    //Code Here
+    // .container{margin:0 4%;}
+
+    .row.padded{padding:0px;}
+
+    .main .main-content{
+      width:100%;
+      text-align:center;
+      .loop {
+        li {
+          hr{width:90%;}
+          input[type="submit"]{
+            // width:100px;
+            // height:35px;
+          }
+        }
+      }
+    }
+
+    footer {
+      margin:0 auto !important;
+      width:100%; 
+      p {
+        width:100%;
+      }
+    }
+
+  }
+
+
+  @media all and (min-width: 960px) {
+
+    
+
+    // Establish all items within a row as being flexbox-enabled
+    .row { display: flex; }
+
+    // Any class that begins with "col-" gets 20px of right margin
+    [class*="col-"] { margin-right: 20px; }
+
+    // The last column in a row gets the right margin removed
+    [class*="col-"]:last-child { margin-right: 0; }
+
+    // Create 12 columns where $i is the index number in the loop.
+    // This will create 12 classes: .col-1, .col-2, .col-3, etc...
+    // These 12 classes will have the flex property of the index number in the loop.
+    @for $i from 1 through 12 {
+      .col-#{$i} { flex: $i; }
+    }
+  }

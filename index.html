@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <!-- prevent touchscreen zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+    <title>Loops</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <body>
+
+    <!-- === HEADER === -->
+    <header class="textCenter container">
+      <div class="buffer"></div>
+      <h4 class="textCenter">
+        a small collection of
+      </h4>
+      <h1 class="textCenter">Loops.</h1>
+      <!-- <hr/> -->
+    </header>
+
+    <!-- === MAIN CONTENT === -->
+    <div class="padded"></div>
+
+    <div class="main container">
+      <div class="main-content">
+
+      <!-- ROW ONE -->
+        <div class="loop row one padded">
+          <li class="loop-items col-6">
+            <h5>Print the numbers 1 through 10.<br/>
+              <span id="loop1" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex1()">
+            <hr/>
+          </li>
+          
+          <li class="col-1"></li>
+
+          <li class="loop-items col-6">
+            <h5>Print the numbers 1 through 10 in reverse. <br/>
+              <span id="loop2" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex2()">
+            <hr/>
+          </li>
+        </div>
+
+      <!-- ROW TWO -->
+        <div class="loop row two padded">
+          <li class="loop-items col-6">
+            <h5>Print all 26 letters of the alphabet. <br/>
+              <span id="loop3" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex3()">
+            <hr/>
+          </li>
+          <li class="col-1"></li>
+          <li class="loop-items col-6">
+            <h5>Print the sum of the numbers 1-100.
+            <br/>
+              <span id="loop4" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex4()">
+            <hr/>
+          </li>
+        </div>
+
+      <!-- ROW THREE -->
+        <div class="loop row three padded">
+          <li class="loop-items col-6">
+            <h5>Print all even numbers from 1 to 100.
+            <br/>
+              <span id="loop5" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex5()">
+            <hr/>
+          </li>
+          <li class="col-1"></li>
+          <li class="loop-items col-6">
+            <h5>Print all odd numbers from 1 to 100.
+            <br/>
+              <span id="loop6" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex6()">
+            <hr/>
+          </li>
+        </div>
+
+      <!-- ROW FOUR -->
+        <div class="loop row four padded">
+          <li class="loop-items col-6">
+            <h5>Print the sum of all even numbers 1-100.
+            <br/>
+              <span id="loop7" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex7()">
+            <hr/>
+          </li>
+          <li class="col-1"></li>
+          <li class="loop-items col-6">
+            <h5>Print the sum of all odd numbers 1-100.
+            <br/>
+              <span id="loop8" class="loopOutput"></span>
+            </h5>
+            <input type="submit" class="submit" onclick="ex8()">
+            <hr/>
+          </li>
+        </div>
+
+      </div>
+
+    </div>
+    
+
+    <div class="clear"></div>
+    
+
+    <!-- === FOOTER === -->
+
+    <footer class="container textCenter padded">
+      <p class="uppercase">Lauren Elliott-Manheim • 2015-18 • Ex Astris, Scientia</p>
+    </footer>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
